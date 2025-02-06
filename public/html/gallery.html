@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альбом товаров - LenZart</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../images/logo/logo.png" alt="LenZart">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button">Главная</a></li>
+                <li><a href="catalog.html" class="nav-button active">Каталог</a></li>
+                <li><a href="about.html" class="nav-button">О нас</a></li>
+                <li>
+                    <a href="cart.html" class="cart-button">
+                        <i class="fas fa-shopping-cart"></i>
+                        Корзина
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+        <div class="gallery-header">
+            <h1 class="category-title">Кухни</h1>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="modern">Современные</button>
+                <button class="filter-btn" data-filter="classic">Классические</button>
+                <button class="filter-btn" data-filter="minimalist">Минимализм</button>
+            </div>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery-grid">
+                <!-- Пример карточки товара -->
+                <div class="product-card" data-category="modern">
+                    <div class="product-image">
+                        <img src="../images/products/kitchen/kitchen1.jpg" alt="Кухня Модерн">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">
+                                <i class="fas fa-eye"></i>
+                                Быстрый просмотр
+                            </button>
+                            <button class="add-to-cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                В корзину
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Кухня "Модерн"</h3>
+                        <p class="product-description">Современная кухня с глянцевыми фасадами</p>
+                        <div class="product-price">85 000 ₽</div>
+                    </div>
+                </div>
+                <!-- Добавьте больше карточек товаров -->
+            </div>
+        </div>
+
+        <!-- Модальное окно быстрого просмотра -->
+        <div class="quick-view-modal">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <div class="modal-body">
+                    <div class="product-gallery">
+                        <img src="" alt="" class="main-image">
+                        <div class="thumbnail-list">
+                            <!-- Миниатюры будут добавляться динамически -->
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h2></h2>
+                        <p class="description"></p>
+                        <div class="price"></div>
+                        <div class="specifications">
+                            <h3>Характеристики:</h3>
+                            <ul>
+                                <!-- Характеристики будут добавляться динамически -->
+                            </ul>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Добавить в корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 LenZart. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="../js/gallery.js"></script>
+</body>
+</html> 

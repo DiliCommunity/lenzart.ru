@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - LenZart</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../images/logo/logo.png" alt="LenZart">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button">Главная</a></li>
+                <li><a href="catalog.html" class="nav-button active">Каталог</a></li>
+                <li><a href="about.html" class="nav-button">О нас</a></li>
+                <li>
+                    <a href="cart.html" class="cart-button">
+                        <i class="fas fa-shopping-cart"></i>
+                        Корзина
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="catalog-page">
+        <div class="page-header">
+            <h1 class="page-title">Наши работы!<!DOCTYPE html>
+                </h1>
+        </div>
+
+        <div class="catalog-slider">
+            <div class="slider-container">
+                <div class="swiper main-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../images/products/kitchen/Kitchen1.jpg" alt="Кухни">
+                            <div class="slide-content">
+                                <h2>Кухни</h2>
+                                <p>Современные кухонные гарнитуры</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/products/hallway/hallway.jpg" alt="Прихожая">
+                            <div class="slide-content">
+                                <h2>Прихожая</h2>
+                                <p>Функциональные прихожие</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/products/wardrobe/doors.jpg" alt="Купе">
+                            <div class="slide-content">
+                                <h2>Купе</h2>
+                                <p>Шкафы-купе на заказ</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/products/living/living.jpg" alt="Гостиная">
+                            <div class="slide-content">
+                                <h2>Гостиная</h2>
+                                <p>Мебель для гостиной</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../images/products/cabinets/wardrobes.jpg" alt="Шкафы">
+                            <div class="slide-content">
+                                <h2>Шкафы, комоды и тумбочки</h2>
+                                <p>Стильные системы хранения</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-buttons">
+            <div class="category-group">
+                <a href="gallery.html?category=kitchen" class="category-button" data-category="kitchen">Кухня</a>
+                <div class="category-circle">
+                    <img src="../images/products/kitchen/Kitchen1.jpg" alt="Кухня">
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <a href="gallery.html?category=hallway" class="category-button" data-category="hallway">Прихожая</a>
+                <div class="category-circle">
+                    <img src="../images/products/hallway/hallway.jpg" alt="Прихожая">
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <a href="gallery.html?category=wardrobe" class="category-button" data-category="wardrobe">Купе</a>
+                <div class="category-circle">
+                    <img src="../images/products/wardrobe/wardrobe-doors.jpg" alt="Купе">
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <a href="gallery.html?category=living" class="category-button" data-category="living">Гостиная</a>
+                <div class="category-circle">
+                    <img src="../images/products/living/living-room.jpg" alt="Гостиная">
+                </div>
+            </div>
+            
+            <div class="category-group">
+                <a href="gallery.html?category=cabinets" class="category-button" data-category="cabinets">Шкафы, тумбочки и комоды</a>
+                <div class="category-circle">
+                    <img src="../images/products/cabinets/cabinet-system.jpg" alt="Шкафы">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 LenZart. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../js/catalog.js"></script>
+    <script>
+        const swiper = new Swiper('.main-slider', {
+            slidesPerView: 1,
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            autoplay: false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                init: function() {
+                    document.querySelectorAll('.category-button').forEach((button, index) => {
+                        button.addEventListener('click', () => {
+                            this.slideTo(index + 1);
+                        });
+                    });
+                }
+            }
+        });
+
+        // Добавляем анимацию при наведении на слайды
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+            slide.addEventListener('mouseenter', () => {
+                slide.style.transform = 'scale(1.02)';
+                slide.style.transition = 'transform 0.3s ease';
+            });
+
+            slide.addEventListener('mouseleave', () => {
+                slide.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html> 

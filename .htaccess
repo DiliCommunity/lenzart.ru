@@ -1,0 +1,89 @@
+# Включаем движок преобразования
+RewriteEngine On
+
+# Перенаправление с HTTP на HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Маршрутизация для HTML страниц
+RewriteRule ^$ public/html/index.html [L]
+RewriteRule ^about$ public/html/about.html [L]
+RewriteRule ^catalog$ public/html/catalog.html [L]
+RewriteRule ^cart$ public/html/cart.html [L]
+RewriteRule ^gallery$ public/html/gallery.html [L]
+RewriteRule ^login$ public/html/login.html [L]
+RewriteRule ^register$ public/html/register.html [L]
+
+# Обработка ошибок
+ErrorDocument 404 /404.html
+ErrorDocument 403 /403.html
+ErrorDocument 500 /500.html
+
+# Кэширование статических файлов
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Изображения
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    
+    # Шрифты
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    
+    # Иконки
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Сжатие файлов
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
+</IfModule>
+
+# Безопасность
+# Запрещаем просмотр директорий
+Options -Indexes
+
+# Защита файла .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Защита от XSS атак
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# Разрешаем кросс-доменные запросы для API
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# Перенаправление на главную страницу при ошибках
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+
+# Запрещаем доступ к системным файлам
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Запрещаем доступ к файлам с определенными расширениями
+<FilesMatch "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch> 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LenZart - Мебель на заказ</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Добавляем Swiper для слайдера -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../images/logo/logo.png" alt="LenZart">
+            </div>
+            <button class="mobile-menu-button" id="mobileMenuButton">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button active">Главная</a></li>
+                <li><a href="catalog.html" class="nav-button">Каталог</a></li>
+                <li><a href="about.html" class="nav-button">О нас</a></li>
+                <li>
+                    <a href="cart.html" class="cart-button">
+                        <i class="fas fa-shopping-cart"></i>
+                        Корзина
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="main-title">Сборка мебели под ключ</h1>
+                <div class="video-preview">
+                    <div class="video-container">
+                        <video id="preview-video" poster="../images/video/furniture-preview.jpg">
+                            <source src="../videos/furniture-assembly.mp4" type="video/mp4">
+                            Ваш браузер не поддерживает видео
+                        </video>
+                        <button class="play-button" id="playButton">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="video-controls">
+                        <button class="control-button" id="fullscreenButton">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="control-button" id="muteButton">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2 class="social-title">Наши соц.сети</h2>
+            <div class="social-links-grid">
+                <a href="https://vk.com/" class="social-item" target="_blank">
+                    <div class="social-circle">
+                        <i class="fab fa-vk"></i>
+                    </div>
+                    <span>VKontakte</span>
+                </a>
+                
+                <a href="https://t.me/" class="social-item" target="_blank">
+                    <div class="social-circle">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <span>Telegram</span>
+                </a>
+                
+                <a href="https://google.com/" class="social-item" target="_blank">
+                    <div class="social-circle">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <span>Google</span>
+                </a>
+                
+                <a href="https://wa.me/+79637532733" class="social-item" target="_blank">
+                    <div class="social-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="contacts" class="contacts">
+            <h2>Контакты</h2>
+            <div class="contact-info">
+                <p>Адрес: Волгоградский проспект 117 к2</p>
+                <p>Метро: Кузьминки 7 выход</p>
+                <p>Телефон: +7-963-753-27-33</p>
+                <p>Email: lenzart@mail.ru</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 LenZart. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

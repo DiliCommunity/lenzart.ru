@@ -1,0 +1,18 @@
+// Пример конфигурационного файла без реальных данных
+require('dotenv').config();
+
+const domainConfig = {
+    domain: process.env.DOMAIN || 'example.com',
+    ssl: {
+        enabled: true,
+        cert: process.env.SSL_CERT_PATH,
+        key: process.env.SSL_KEY_PATH
+    },
+    cors: {
+        origin: `https://${process.env.DOMAIN || 'example.com'}`,
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+        credentials: true
+    }
+};
+
+module.exports = domainConfig; 

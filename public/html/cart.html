@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - LenZart</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../images/logo/logo.png" alt="LenZart">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button">Главная</a></li>
+                <li><a href="catalog.html" class="nav-button">Каталог</a></li>
+                <li><a href="about.html" class="nav-button">О нас</a></li>
+                <li>
+                    <a href="cart.html" class="cart-button active">
+                        <i class="fas fa-shopping-cart"></i>
+                        Корзина
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-page">
+        <div class="cart-container">
+            <h2>Корзина</h2>
+            <div class="cart-items">
+                <!-- Пример товара в корзине -->
+                <div class="cart-item">
+                    <img src="../images/products/kitchen/Kitchen1.jpg" alt="Кухонный гарнитур">
+                    <div class="item-details">
+                        <h3>Кухонный гарнитур "Модерн"</h3>
+                        <p class="item-description">Современный дизайн, материал: ЛДСП</p>
+                        <div class="item-price">85 000 ₽</div>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="remove-item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="assembly-service">
+                <h3>Дополнительные услуги</h3>
+                <label class="service-checkbox">
+                    <input type="checkbox" name="assembly">
+                    <span class="checkbox-text">Сборка и установка (+10% от стоимости)</span>
+                </label>
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-item">
+                    <span>Товары:</span>
+                    <span>85 000 ₽</span>
+                </div>
+                <div class="summary-item">
+                    <span>Сборка и установка:</span>
+                    <span>8 500 ₽</span>
+                </div>
+                <div class="summary-total">
+                    <span>Итого:</span>
+                    <span>93 500 ₽</span>
+                </div>
+                <button class="checkout-button">
+                    Оформить заказ
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 LenZart. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="../js/cart.js"></script>
+</body>
+</html> 
